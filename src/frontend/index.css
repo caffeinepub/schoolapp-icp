@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FONTS — self-hosted from /assets/fonts/
+   ============================================================ */
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ============================================================
+   DESIGN TOKENS — SchoolApp ICP
+   Palette: warm off-white bg, deep teal primary, slate accents
+   ============================================================ */
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Backgrounds */
+    --background: 0.97 0.008 95;
+    --card: 0.99 0.004 90;
+    --popover: 0.99 0.004 90;
+
+    /* Foregrounds */
+    --foreground: 0.2 0.02 240;
+    --card-foreground: 0.2 0.02 240;
+    --popover-foreground: 0.2 0.02 240;
+
+    /* Primary: deep teal */
+    --primary: 0.38 0.1 200;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: light slate */
+    --secondary: 0.92 0.012 235;
+    --secondary-foreground: 0.25 0.03 230;
+
+    /* Muted */
+    --muted: 0.94 0.01 220;
+    --muted-foreground: 0.52 0.02 230;
+
+    /* Accent: warm amber for highlights */
+    --accent: 0.9 0.05 75;
+    --accent-foreground: 0.2 0.05 60;
+
+    /* Destructive: clear red */
+    --destructive: 0.56 0.22 28;
+    --destructive-foreground: 0.99 0 0;
+
+    /* Borders & inputs */
+    --border: 0.88 0.015 225;
+    --input: 0.88 0.015 225;
+    --ring: 0.38 0.1 200;
+
+    /* Success green */
+    --success: 0.52 0.15 152;
+    --success-foreground: 0.99 0 0;
+
+    /* Charts (unused but required) */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.25 0.02 220;
+    --sidebar-foreground: 0.99 0 0;
+    --sidebar-primary: 0.38 0.1 200;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.32 0.025 220;
+    --sidebar-accent-foreground: 0.99 0 0;
+    --sidebar-border: 0.32 0.025 220;
+    --sidebar-ring: 0.5 0.1 200;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Fat finger: all interactive elements minimum 56px */
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    min-height: 56px;
+    font-size: 1.1rem;
+  }
+
+  /* Override for small icon-only buttons */
+  .btn-icon {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+  .fat-target {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .success-badge {
+    background-color: oklch(var(--success));
+    color: oklch(var(--success-foreground));
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
