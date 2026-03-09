@@ -43,10 +43,10 @@ export default function LoginPage() {
             <Fingerprint className="w-10 h-10 text-primary" />
           </div>
           <h1 className="font-display font-bold text-2xl text-foreground mb-2">
-            Inloggen
+            Welkom bij SchoolApp
           </h1>
           <p className="text-muted-foreground text-base leading-relaxed">
-            Gebruik je vingerafdruk of gezichtsscan. Geen wachtwoord nodig.
+            Inloggen met je vingerafdruk of gezichtsscan. Geen wachtwoord nodig.
           </p>
         </div>
 
